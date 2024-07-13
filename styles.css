@@ -38,7 +38,7 @@ header nav a {
 }
 
 .hero {
-  padding: 50px 0px;
+  padding: 50px 0;
   text-align: left;
   max-width: 600px;
   margin: 0;
@@ -81,14 +81,20 @@ header nav a {
   margin-top: 30px;
 }
 
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   flex: 1;
   min-width: 280px;
   padding: 30px;
   border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card.blue {
@@ -101,6 +107,11 @@ header nav a {
   color: var(--background-color);
 }
 
+.card:hover {
+  transform: scale(1.02) rotate(1deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
 .card h4 {
   margin: 0;
 }
@@ -111,14 +122,8 @@ header nav a {
   vertical-align: middle;
 }
 
-.card a {
-  align-self: flex-end;
-  padding: 10px 20px;
-  border-radius: 8px;
-  color: var(--background-color);
-  text-decoration: none;
-  font-weight: 500;
-  border: 1px solid white;
+.card p {
+  font-weight: 300;
 }
 
 footer {
@@ -130,12 +135,11 @@ hr {
   border: 1px solid black;
 }
 
-/* Responsive breakpoints */
 @media (max-width: 1200px) {
   .hero h1 {
     font-size: 2.5em;
   }
-  
+
   .hero h2 {
     font-size: 1.8em;
   }
@@ -149,7 +153,7 @@ hr {
   .hero h1 {
     font-size: 2em;
   }
-  
+
   .hero h2 {
     font-size: 1.6em;
   }
@@ -168,11 +172,11 @@ hr {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   header .logo img {
     height: 18px;
   }
-  
+
   header nav a {
     display: none;
   }
@@ -200,7 +204,7 @@ hr {
   }
 
   .hero {
-    padding: 30px 0px;
+    padding: 30px 0;
   }
 
   .hero h1 {
