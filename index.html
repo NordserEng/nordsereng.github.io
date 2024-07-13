@@ -3,52 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-
-        .container {
-            text-align: center;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin: 0;
-            color: #333;
-        }
-
-        p {
-            font-size: 1.2em;
-            color: #666;
-        }
-
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2em;
-            }
-
-            p {
-                font-size: 1em;
-            }
-        }
-    </style>
+    <title>Nordser</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Hello, World!</h1>
-        <p>Welcome to my responsive website.</p>
-    </div>
+    <header>
+        <div class="container">
+            <div class="logo">NORDSER</div>
+            <nav>
+                <a href="#">Flytt</a>
+                <a href="#">Contact us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Convenience at your service</h1>
+            <h2>Transforming essential services through innovation, sustainability, and convenience, making life easier and better for everyone.</h2>
+        </section>
+
+        <section class="content">
+            <h3>Innovating for Simplicity</h3>
+            <p>Life is complicated, but essential tasks shouldn’t be. At Nordser, we turn everyday chores into enjoyable experiences. We handle the hard work so you can focus on what matters most.</p>
+
+            <h3>Empowering Communities</h3>
+            <p>Nordser creates job opportunities that empower people and strengthen local economies. Our jobs are flexible and rewarding, fitting into your lifestyle. By supporting local communities and providing meaningful work, we help build a more connected and inclusive society.</p>
+
+            <h3>Embracing Circularity</h3>
+            <p>We support a circular economy by making it easy to move second-hand goods, reducing waste and promoting reuse. By choosing Nordser, you are helping to create a better environment, one service at a time.</p>
+            
+            <p>Welcome to Nordser. Convenience at your service.</p>
+        </section>
+
+        <section class="cards">
+            <div class="card blue">
+                <h4>Flytt</h4>
+                <p>Flytt is Nordser's leading delivery service, designed to make moving things easy and stress-free. Whether it's a couch or your whole apartment, Flytt has you covered.</p>
+                <a href="#">Visit Flytt</a>
+            </div>
+            <div class="card orange">
+                <h4>Coming Soon</h4>
+                <p></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 NORDSER AS</p>
+        </div>
+    </footer>
 </body>
 </html>
