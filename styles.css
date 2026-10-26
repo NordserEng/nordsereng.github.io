@@ -1,225 +1,84 @@
 :root {
-  --primary-color: #253CC5;
-  --secondary-color: #ff6600;
-  --primary-text-color: #000;
-  --background-color: #fff;
+  --bg: #f6f3ee;
+  --fg: #151515;
+  --muted: #5b5b5b;
+  --card: #ffffff;
+  --border: #e3ddd3;
+  --accent: #0f6b4a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--background-color);
-  color: var(--primary-text-color);
+  font-family: "Newsreader", "Iowan Old Style", "Times New Roman", serif;
+  color: var(--fg);
+  background: radial-gradient(1200px 600px at 10% 0%, #ffffff 0%, var(--bg) 55%);
+  min-height: 100vh;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
+.wrap {
+  max-width: 680px;
   margin: 0 auto;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 0;
-}
-
-header .logo img {
-  height: 20px;
-}
-
-header nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: var(--primary-text-color);
-  font-weight: 500;
-}
-
-.hero {
-  padding: 50px 0;
-  text-align: left;
-  max-width: 600px;
-  margin: 0;
+  padding: 72px 24px 96px;
 }
 
 .hero h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-  font-weight: 500;
+  font-size: clamp(36px, 5vw, 56px);
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
 }
 
-.hero h2 {
-  font-size: 2em;
-  font-weight: 300;
-  color: var(--primary-text-color);
+.hero p {
+  margin: 0 0 32px;
+  font-size: 18px;
+  color: var(--muted);
 }
 
-.content {
-  padding: 20px 0;
+.list {
+  display: grid;
+  gap: 12px;
 }
 
-.content h3 {
-  font-size: 1.6em;
-  margin-top: 30px;
-  font-weight: 500;
-}
-
-.content p {
-  font-size: 1.5em;
-  line-height: 1.6;
-  color: var(--primary-text-color);
-  font-weight: 300;
-}
-
-.cards {
+.item {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px 0;
-  margin-top: 30px;
-}
-
-.card-link {
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
   text-decoration: none;
   color: inherit;
-  display: block;
+  transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-width: 280px;
-  padding: 30px;
-  border-radius: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.item:hover {
+  transform: translateY(-1px);
+  border-color: #d3c9bb;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
 
-.card.blue {
-  background-color: var(--primary-color);
-  color: var(--background-color);
+.name {
+  font-weight: 600;
 }
 
-.card.orange {
-  background-color: var(--secondary-color);
-  color: var(--background-color);
+.url {
+  font-size: 14px;
+  color: var(--accent);
 }
 
-.card:hover {
-  transform: scale(1.02) rotate(1deg);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.card h4 {
-  margin: 0;
-}
-
-.card h4 img {
-  height: 24px;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
-.card p {
-  font-weight: 300;
-}
-
-footer {
-  text-align: center;
-  padding: 20px 0;
-}
-
-hr {
-  border: 1px solid black;
-}
-
-@media (max-width: 1200px) {
-  .hero h1 {
-    font-size: 2.5em;
-  }
-
-  .hero h2 {
-    font-size: 1.8em;
-  }
-
-  .content p {
-    font-size: 1.4em;
-  }
-}
-
-@media (max-width: 992px) {
-  .hero h1 {
-    font-size: 2em;
-  }
-
-  .hero h2 {
-    font-size: 1.6em;
-  }
-
-  .content p {
-    font-size: 1.3em;
-  }
-
-  .card {
-    padding: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  header {
+@media (max-width: 520px) {
+  .item {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  header .logo img {
-    height: 18px;
-  }
-
-  header nav a {
-    display: none;
-  }
-
-  .hero h1 {
-    font-size: 1.8em;
-  }
-
-  .hero h2 {
-    font-size: 1.4em;
-  }
-
-  .content h3 {
-    font-size: 1.4em;
-  }
-
-  .content p {
-    font-size: 1.2em;
-  }
-}
-
-@media (max-width: 576px) {
-  header {
-    padding: 20px 0;
-  }
-
-  .hero {
-    padding: 30px 0;
-  }
-
-  .hero h1 {
-    font-size: 1.5em;
-  }
-
-  .hero h2 {
-    font-size: 1.2em;
-  }
-
-  .content h3 {
-    font-size: 1.2em;
-  }
-
-  .content p {
-    font-size: 1em;
+    gap: 6px;
   }
 }
